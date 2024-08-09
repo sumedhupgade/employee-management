@@ -1,0 +1,28 @@
+.sidebar {
+  width: 200px;
+  background-color: #ffffff;
+  border-right: 1px solid #e7e5e5;
+  height: 100%;
+
+  .logo {
+    height: 70px;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../../../assets/img/Infrrd-Logo-Transparent.png);
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      padding: 20px;
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+}
