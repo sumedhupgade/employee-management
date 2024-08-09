@@ -1,0 +1,52 @@
+:host {
+  width: calc(calc(100% - 34px)/4);
+  .employee-card {
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid #dbdbdb;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100%;
+    img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+    .title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    .rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .rating img {
+      width: 15px;
+      margin-right: 5px;
+    }
+    .experience,
+    .date-of-joining,
+    .team,
+    .manager {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .contact {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .contact img {
+      width: 20px;
+      margin-right: 10px;
+    }
+  }
+}

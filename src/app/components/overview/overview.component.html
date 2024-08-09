@@ -1,0 +1,5 @@
+<div class="employee-cards-container">
+  @for (employee of employees; track $index) {
+  <app-employee-card [employee]="employee"></app-employee-card>
+  }
+</div>
