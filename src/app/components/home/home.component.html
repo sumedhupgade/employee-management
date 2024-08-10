@@ -1,5 +1,5 @@
 <div class="home-container">
-    <app-sidebar (takeAction)="menuItemClicked($event)"></app-sidebar>
+    <app-sidebar (takeAction)="menuItemClicked($event)" [searchPanelVisible]="showSearchPanel"></app-sidebar>
     
     <div class="home-content-view">
         <app-header></app-header>

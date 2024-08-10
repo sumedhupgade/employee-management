@@ -1,37 +1,56 @@
-.select-wrapper{
-    position: relative;
-    .selected-value{
-        display: flex;
-        padding: 4px 0px;
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
+.select-wrapper {
+  position: relative;
+  .selected-value {
+    display: flex;
+    padding: 4px 0px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    
+    span{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: calc(100% - 25px);
     }
 
-    .drodown-list{
-        position: absolute;
-        top: 35px;
-        left: 0px;
-        width: 100%;
-        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
-        background-color: #fff;
-        margin: 0px;
-        list-style: none;
-        padding: 0;
-        max-height: 145px;
-        overflow: auto;
-        z-index: 1;
-
-        li{
-            padding: 8px 8px;
-            font-weight: 600;
-            font-size: 12px;
-            cursor: pointer;
-
-            &:hover,
-            &.selected{
-                background: #eaeaea;
-            }
-        }
+    &:after {
+      content: "";
+      width: 13px;
+      height: 13px;
+      background: url("../../../../assets/img/arrow-down.png") no-repeat;
+      background-size: contain;
+      top: 5px;
+      right: 5px;
+      position: absolute;
+      display: inline-block;
     }
+  }
+
+  .drodown-list {
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    width: 100%;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    margin: 0px;
+    list-style: none;
+    padding: 0;
+    max-height: 145px;
+    overflow: auto;
+    z-index: 1;
+
+    li {
+      padding: 8px 8px;
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+
+      &:hover,
+      &.selected {
+        background: #eaeaea;
+      }
+    }
+  }
 }
