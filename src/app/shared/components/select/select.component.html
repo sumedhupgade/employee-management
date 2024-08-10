@@ -1,0 +1,19 @@
+<div class="select-wrapper">
+    <div class="selected-value" (click)="toggleDropdown()" >
+        @switch (value) {
+            @case ('') {
+                <span>Select</span>
+            }
+            @default { 
+            <span [textContent]="value"></span>
+            }
+        }
+    </div>
+    @if (dropdwDownOpen) {
+        <ul class="drodown-list">
+            @for (item of options; track $index) {
+                <li (click)="select(item.value)" [class.selected]="value === item.label" >{{item.label}}</li>
+            }
+        </ul>
+    }
+</div>

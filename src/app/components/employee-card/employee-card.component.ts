@@ -2,8 +2,10 @@ import { Component, Input } from '@angular/core';
 
 interface Employee {
   name: string,
+  avatar: string,
   role: string,
   experience: number,
+  doj: string,
   employee_rating: number,
   current_team: string,
   reporting_manager: string,
@@ -18,5 +20,5 @@ interface Employee {
   styleUrl: './employee-card.component.scss'
 })
 export class EmployeeCardComponent {
-  @Input() employee: Employee = { name: '', role: '', experience: 0, employee_rating: 0, current_team: '', reporting_manager: '', mobile_number: '', email: '' };
+  @Input() employee: Employee = { name: '', role: '',avatar: '', experience: 0,doj:'', employee_rating: 0, current_team: '', reporting_manager: '', mobile_number: '', email: '' };
 }

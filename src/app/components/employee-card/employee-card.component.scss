@@ -1,43 +1,114 @@
 :host {
-  width: calc(calc(100% - 34px)/4);
+  width: calc(calc(100% - 34px) / 4);
+  min-width: 265px;
+//   max-width: 320px;
   .employee-card {
     background-color: #ffffff;
     border-radius: 3px;
     border: 1px solid #dbdbdb;
-    padding: 20px;
     box-sizing: border-box;
     height: 100%;
-    img {
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      margin-right: 10px;
+    width: 100%;
+
+    .employee-card-header {
+      display: flex;
+      gap: 16px;
+      padding: 12px;
+      align-items: center;
+
+      .img-container {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: calc(100% - 112px);
+
+        .title {
+          font-weight: bold;
+          font-size: 14px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 99%;
+        }
+
+        .subtitle {
+          font-size: 13px;
+          color: #666;
+          font-weight: 500;
+        }
+      }
+      .share-profile {
+        width: 30px;
+        display: flex;
+        justify-content: flex-end;
+      }
     }
-    .title {
-      font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-    .subtitle {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 15px;
-    }
-    .rating {
+
+    .rating-row {
       display: flex;
       align-items: center;
-      margin-bottom: 10px;
+      gap: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgb(232, 221, 221);
+
+      .rating-text {
+        font-size: 12px;
+        padding: 5px 12px;
+      }
+
+      .rating {
+        display: flex;
+        align-items: center;
+        img {
+          width: 15px;
+        }
+      }
     }
-    .rating img {
-      width: 15px;
-      margin-right: 5px;
+
+    .grey-text {
+      color: #9e9898;
+      font-weight: 500;
+    }
+
+    .employee-card-row {
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 12px 12px;
+      font-size: 12px;
+      border-bottom: 1px solid rgb(232, 221, 221);
+      color: #000;
+      font-weight: 500;
+
+      &:last-of-type {
+        border-bottom: 0px;
+      }
+    }
+
+    .tilted-seprator {
+      height: 100%;
+      background-color: rgb(232, 221, 221);
+      width: 1px;
+      transform: rotate(15deg) translateX(-45%);
+      position: absolute;
+      left: 45%;
     }
     .experience,
     .date-of-joining,
     .team,
     .manager {
-      font-size: 14px;
-      margin-bottom: 10px;
+      font-size: 12px;
     }
     .contact {
       display: flex;
@@ -48,5 +119,29 @@
       width: 20px;
       margin-right: 10px;
     }
+
+    .email {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 30px);
+    }
   }
+}
+
+@media screen and (min-width: 1600px) {
+    :host {
+        width: 270px !important;
+        min-width: 270px;
+        max-width: unset;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    :host {
+        width: 270px !important;
+        flex: unset !important;
+        min-width: 270px;
+        max-width: unset;
+    }
 }

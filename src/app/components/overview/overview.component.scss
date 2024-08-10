@@ -1,10 +1,26 @@
 :host {
-  .employee-cards-container {
+    padding: 30px 0px 10px 10px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
-    padding: 40px 10px;
-    overflow: auto;
-    max-height: calc(100vh - 131px);
+    height: calc(100vh - 82px);
+    .data-details{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .results{
+            font-weight: 500;
+        }
+    }
+    .employee-cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        overflow: auto;
+        max-height: 100%;
+        
   }
 }
