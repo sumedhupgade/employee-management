@@ -1,3 +1,38 @@
 <div class="sidebar">
    <div class="logo"></div>
+   <ul>
+      <li>
+         <img src="img/overview.png" alt="Overview">
+         <span>Overview</span>
+      </li>
+      <li>
+         <img src="img/messages.png" alt="messages">
+         <span>Messages</span>
+         <span class="message-count">99+</span>
+      </li>
+      <li (click)="liClicked('search')" [class.active]="searchActive">
+         <img src="img/search.png" alt="search">
+         <span>Search</span>
+      </li>
+      <li>
+         <img src="img/filter.png" alt="Filter">
+         <span>Filter</span>
+      </li>
+      <li>
+         <img src="img/history.png" alt="History">
+         <span>History</span>
+      </li>
+      <li>
+         <img src="img/account.png" alt="my Account">
+         <span>My Account</span>
+      </li>
+      <li class="mt-auto">
+         <img src="img/help.png" alt="help">
+         <span>Get Help</span>
+      </li>
+      <li>
+         <img src="img/logout.png" alt="sign out">
+         <span>Sign Out</span>
+      </li>
+   </ul>
 </div>
