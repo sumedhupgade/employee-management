@@ -22,20 +22,18 @@ export class SelectComponent {
   @Input()
   options: DropdownValue[] = [{ value: '', label: '' }];
 
-  @Input() value:string = '';
-
+  @Input() value: string = '';
+  @Input() class: string = '';
   @Output() valueChange = new EventEmitter();
   dropdwDownOpen = false;
 
   @HostListener('document:click', ['$event'])
   clickout(event: MouseEvent) {
-    if(!this.elementRef.nativeElement.contains(event.target)) {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
       this.dropdwDownOpen = false;
     }
   }
-  constructor(private elementRef: ElementRef) {
-    this.valueChange = new EventEmitter();
-  }
+  constructor(private elementRef: ElementRef) {}
 
   select(value: string) {
     this.dropdwDownOpen = false;
@@ -43,7 +41,7 @@ export class SelectComponent {
     this.valueChange.emit(value);
   }
 
-  toggleDropdown(){
+  toggleDropdown() {
     this.dropdwDownOpen = !this.dropdwDownOpen;
   }
 }

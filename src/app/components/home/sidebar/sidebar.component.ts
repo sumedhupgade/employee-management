@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Component, EventEmitter,Input, Output } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 
 @Component({
@@ -9,19 +9,19 @@ import { filter } from 'rxjs';
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
 })
-export class SidebarComponent {
+export class SidebarComponent{
+  @Input() searchPanelVisible = false;
   @Output() takeAction = new EventEmitter();
   searchActive = false;
+  
   constructor(private router: Router) {
     router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event) => {
-        console.log(event);
       });
   }
 
   liClicked(option:string){
-    this.searchActive = !this.searchActive;
     this.takeAction.emit(option)
   }
 }

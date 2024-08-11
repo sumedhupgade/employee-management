@@ -1,15 +1,22 @@
 <div class="home-container">
-    <app-sidebar (takeAction)="menuItemClicked($event)"></app-sidebar>
-    
-    <div class="home-content-view">
-        <app-header></app-header>
-        <div class="d-flex">
-            @if (showSearchPanel) {
-                <app-search-panel class="searchPanel" [(searchPanelVisible)]="showSearchPanel"></app-search-panel>
-            }
-            <div class="routing-content">
-                <router-outlet />
-            </div>
-        </div>
+  <app-sidebar
+    (takeAction)="menuItemClicked($event)"
+    [searchPanelVisible]="showSearchPanel"
+  >
+  </app-sidebar>
+
+  <div class="home-content-view">
+    <app-header></app-header>
+    <div class="d-flex">
+      @if (showSearchPanel) {
+      <app-search-panel
+        class="searchPanel"
+        [(searchPanelVisible)]="showSearchPanel"
+      ></app-search-panel>
+      }
+      <div class="routing-content">
+        <router-outlet />
+      </div>
     </div>
+  </div>
 </div>
