@@ -1,35 +1,35 @@
 <div class="search-panel-row">
   <label for="Department">Department</label>
-  <app-select [options]="dept_list" [value]="searchObj.dept"></app-select>
+  <app-select [options]="dept_list" [(value)]="searchObj.department"></app-select>
 </div>
 <div class="search-panel-row">
   <label for="Department">Roll Type</label>
-  <app-select [options]="role_list" [value]="searchObj.roll"></app-select>
+  <app-select [options]="role_list" [(value)]="searchObj.employment_type"></app-select>
 </div>
 <div class="search-panel-row">
   <label for="Department">Designation</label>
-  <app-select [options]="designation_list" [value]="searchObj.designation"></app-select>
+  <app-select [options]="designation_list" [(value)]="searchObj.designation"></app-select>
 </div>
 <div class="search-panel-row">
   <label for="Department">Experience</label>
-  <app-select [options]="exp_list" [value]="searchObj.experience"></app-select>
+  <app-select [options]="exp_list" [(value)]="searchObj.experience"></app-select>
 </div>
 <div class="search-panel-row">
   <label for="Department">Year of Joining</label>
-  <app-select [options]="yoj_list" [value]="searchObj.yoj"></app-select>
+  <app-select [options]="yoj_list" [(value)]="searchObj.yoj"></app-select>
 </div>
 <div class="search-panel-row">
   <label for="Department">Location</label>
-  <app-select [options]="[{value: 'Banglore', label: 'Banglore'}]" [value]="searchObj.location"></app-select>
+  <app-select [options]="[{value: 'Banglore', label: 'Banglore'}]" [(value)]="searchObj.location"></app-select>
 </div>
 <div class="search-panel-row">
   <label for="Department">Team</label>
-  <app-select [options]="[{value: 'OCBC Singapore', label: 'OCBC Singapore'}]" [value]="searchObj.team"></app-select>
+  <app-select [options]="team_list" [(value)]="searchObj.team"></app-select>
 </div>
 <button class="circle-btn" (click)="closeSearchPanel()">
     <img src="img/back.png" alt="">
 </button>
 <div class="search-panel-footer">
   <button class="secondary-btn" (click)="clear()">Clear</button>
-  <button class="primary-btn">Submit</button>
+  <button class="primary-btn" (click)="filterEmployee()">Submit</button>
 </div>

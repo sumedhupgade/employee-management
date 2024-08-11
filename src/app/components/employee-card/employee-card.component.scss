@@ -5,7 +5,7 @@
   .employee-card {
     background-color: #ffffff;
     border-radius: 3px;
-    border: 1px solid #dbdbdb;
+    border: 1px solid #dad9d8;
     box-sizing: border-box;
     height: 100%;
     width: 100%;
@@ -52,13 +52,18 @@
         width: 30px;
         display: flex;
         justify-content: flex-end;
+
+        .circle-btn.send-btn img{
+            height: 15px;
+            width: 15px;
+        }
       }
     }
 
     .rating-row {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 4px;
       padding-bottom: 12px;
       border-bottom: 1px solid rgb(232, 221, 221);
 

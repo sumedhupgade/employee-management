@@ -1,2 +1,7 @@
-<div class="app-header"><p>header works!</p>
+<div class="app-header">
+    <div class="bell-btn">
+        <img src="img/bell.png" alt="bell">
+        <span class="notification-count">22</span>
+    </div>
+    <app-select [class]="'showGroup'" (valueChange)="filterEmployee($event)" [options]="team_list" [(value)]="selectedTeam"></app-select>
 </div>

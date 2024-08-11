@@ -1,218 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { EmployeeCardComponent } from '../employee-card/employee-card.component';
-
+import { FormsModule } from '@angular/forms';
+import { CommonService } from '../../shared/services/common.service';
+import { Employee } from '../employee-card/employee-card.component';
 @Component({
   selector: 'app-overview',
   standalone: true,
-  imports: [EmployeeCardComponent],
+  imports: [EmployeeCardComponent, FormsModule],
   templateUrl: './overview.component.html',
   styleUrl: './overview.component.scss',
 })
 export class OverviewComponent {
-  employees = [
-    {
-      name: 'Emma Johnson',
-      avatar: '/img/jesica.jpg',
-      role: 'Sr. UI Developer',
-      experience: 7,
-      doj: '2017',
-      employee_rating: 4,
-      current_team: 'IDC',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9123456789',
-      email: 'emma@infrrd.ai',
-    },
-    {
-      name: 'James Smith',
-      avatar: '/img/idris.jpg',
-      role: 'Full Stack Developer',
-      experience: 6,
-      doj: '2017',
-      employee_rating: 5,
-      current_team: 'Radian',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9234567890',
-      email: 'james@infrrd.ai',
-    },
-    {
-      name: 'Olivia Brown',
-      avatar: '/img/jesica.jpg',
-      role: 'UI/UX Designer',
-      experience: 4,
-      doj: '2017',
-      employee_rating: 3,
-      current_team: 'Product Team',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9345678901',
-      email: 'olivia@infrrd.ai',
-    },
-    {
-      name: 'Liam Davis',
-      avatar: '/img/andrew.jpg',
-      role: 'DevOps Engineer',
-      experience: 8,
-      doj: '2017',
-      employee_rating: 4,
-      current_team: 'Rustify',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9456789012',
-      email: 'liam@infrrd.ai',
-    },
-    {
-      name: 'Sophia Martinez',
-      avatar: '/img/jesica.jpg',
-      role: 'Data Scientist',
-      experience: 5,
-      doj: '2017',
-      employee_rating: 4,
-      current_team: 'OCBC',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9567890123',
-      email: 'sophia@infrrd.ai',
-    },
-    {
-      name: 'Noah Wilson',
-      avatar: '/img/idris.jpg',
-      role: 'QA Engineer',
-      experience: 3,
-      doj: '2017',
-      employee_rating: 3,
-      current_team: 'Radian',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9678901234',
-      email: 'noah@infrrd.ai',
-    },
-    {
-      name: 'Ava Taylor',
-      avatar: '/img/jesica.jpg',
-      role: 'Software Architect',
-      experience: 10,
-      doj: '2017',
-      employee_rating: 5,
-      current_team: 'Product Team',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9789012345',
-      email: 'ava@infrrd.ai',
-    },
-    {
-      name: 'Ethan Anderson',
-      avatar: '/img/andrew.jpg',
-      role: 'Systems Analyst',
-      experience: 6,
-      doj: '2017',
-      employee_rating: 4,
-      current_team: 'IDC',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9890123456',
-      email: 'ethan@infrrd.ai',
-    },
-    {
-      name: 'Isabella Thomas',
-      avatar: '',
-      role: 'Network Engineer',
-      experience: 7,
-      doj: '2017',
-      employee_rating: 4,
-      current_team: 'Rustify',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9901234567',
-      email: 'isabella@infrrd.ai',
-    },
-    {
-      name: 'Mason Lee',
-      avatar: '',
-      role: 'Security Engineer',
-      experience: 5,
-      doj: '2017',
-      employee_rating: 4,
-      current_team: 'OCBC',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9012345678',
-      email: 'mason@infrrd.ai',
-    },
-    {
-      name: 'Charlotte Harris',
-      avatar: '/img/jesica.jpg',
-      role: 'Technical Writer',
-      experience: 4,
-      doj: '2017',
-      employee_rating: 3,
-      current_team: 'Radian',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9123456781',
-      email: 'charlotte@infrrd.ai',
-    },
-    {
-      name: 'Amelia Clark',
-      avatar: '',
-      role: 'Product Manager',
-      experience: 9,
-      doj: '2017',
-      employee_rating: 5,
-      current_team: 'Product Team',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9234567892',
-      email: 'amelia@infrrd.ai',
-    },
-    {
-      name: 'Lucas Rodriguez',
-      avatar: '/img/idris.jpg',
-      role: 'Cloud Engineer',
-      experience: 7,
-      doj: '2017',
-      employee_rating: 4,
-      current_team: 'IDC',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9345678902',
-      email: 'lucas@infrrd.ai',
-    },
-    {
-      name: 'Mia Walker',
-      avatar: '',
-      role: 'Business Analyst',
-      experience: 5,
-      doj: '2017',
-      employee_rating: 4,
-      current_team: 'Rustify',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9456789013',
-      email: 'mia@infrrd.ai',
-    },
-    {
-      name: 'Jackson Young',
-      avatar: '/img/idris.jpg',
-      role: 'Mobile Developer',
-      experience: 6,
-      doj: '2017',
-      employee_rating: 4,
-      current_team: 'OCBC',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9567890124',
-      email: 'jackson@infrrd.ai',
-    },
-    {
-      name: 'Harper King',
-      avatar: '/img/andrew.jpg',
-      role: 'Game Developer',
-      experience: 8,
-      doj: '2017',
-      employee_rating: 5,
-      current_team: 'Radian',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9678901235',
-      email: 'harper@infrrd.ai',
-    },
-    {
-      name: 'Ella Scott',
-      avatar: '/img/jesica.jpg',
-      role: 'Database Administrator',
-      experience: 4,
-      doj: '2017',
-      employee_rating: 3,
-      current_team: 'Product Team',
-      reporting_manager: 'Lalit Agrawal',
-      mobile_number: '9789012346',
-      email: 'ella@infrrd.ai',
-    },
-  ];
+  showBangloreOnly = false;
+  employees:Employee[] = [];
+
+  constructor(private cs: CommonService){
+    this.cs.employeesChanged.subscribe((value)=>{
+      this.employees = value;
+    })
+  }
+  ngOnInit(): void {
+    this.fetchData();
+  }
+
+  fetchData(): void {
+    this.cs.getEmployeesData().subscribe({
+      next: (response) => {
+        this.employees = response.employees;
+      },
+      error: (error) => {
+        console.error('Error fetching data:', error);
+      },
+      complete: () => {
+        console.log('API call completed.');
+      }
+    });
+  }
+
+  orgEmployees = [...this.employees];
+  filterEmployee() {
+    this.cs.filterData({location: this.showBangloreOnly ? 'Bangalore' : ''})
+  }
 }

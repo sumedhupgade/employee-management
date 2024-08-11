@@ -6,12 +6,12 @@
     font-size: 12px;
     font-weight: 600;
     cursor: pointer;
-    
-    span{
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: calc(100% - 25px);
+
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 25px);
     }
 
     &:after {
@@ -20,7 +20,8 @@
       height: 13px;
       background: url("../../../../assets/img/arrow-down.png") no-repeat;
       background-size: contain;
-      top: 5px;
+      top: 50%;
+      transform: translateY(-50%);
       right: 5px;
       position: absolute;
       display: inline-block;
@@ -51,6 +52,28 @@
       &.selected {
         background: #eaeaea;
       }
+    }
+  }
+
+  &.showGroup {
+    width: 106px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    padding: 4px;
+    padding-left: 10px;
+    position: relative;
+    padding-left: 31px;
+    &:before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: url("../../../../assets/img/group.png") no-repeat;
+      background-size: contain;
+      top: 50%;
+      left: 7px;
+      position: absolute;
+      display: inline-block;
+      transform: translateY(-50%);
     }
   }
 }

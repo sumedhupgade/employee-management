@@ -1,11 +1,39 @@
-.app-header{
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    padding: 8px 16px;
-    height: 35px;
+.app-header {
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 8px 16px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+  gap: 16px;
+
+  .bell-btn {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    position: relative;
-    z-index: 1;
+    justify-content: center;
+    cursor: pointer;
+    height: 100%;
+
+    img{
+        height: 22px;
+    }
+
+    .notification-count {
+      position: absolute;
+      top: 0px;
+      right: -9px;
+      border-radius: 50%;
+      background: #e0624b;
+      padding: 3px 4px;
+      font-size: 8px;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      line-height: 11px;
+    }
+  }
 }

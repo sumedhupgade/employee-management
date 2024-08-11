@@ -23,7 +23,7 @@ export class SelectComponent {
   options: DropdownValue[] = [{ value: '', label: '' }];
 
   @Input() value:string = '';
-
+  @Input() class:string = '';
   @Output() valueChange = new EventEmitter();
   dropdwDownOpen = false;
 

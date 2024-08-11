@@ -13,7 +13,7 @@ import { SearchPanelComponent } from '../search-panel/search-panel.component';
 })
 export class HomeComponent {
 
-  showSearchPanel = true;
+  showSearchPanel = false;
   menuItemClicked(event:any){
     if (event == 'search') {
       this.showSearchPanel = !this.showSearchPanel

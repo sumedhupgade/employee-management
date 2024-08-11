@@ -1,24 +1,31 @@
 import { Component, Input } from '@angular/core';
+import { NgFor } from '@angular/common';
 
-interface Employee {
+export interface Employee {
   name: string,
   avatar: string,
-  role: string,
+  designation: string,
   experience: number,
-  doj: string,
+  yoj: string,
   employee_rating: number,
-  current_team: string,
+  team: string,
   reporting_manager: string,
   mobile_number: string,
   email: string,
+  location: string;
+  employment_type: string;
 }
 @Component({
   selector: 'app-employee-card',
   standalone: true,
-  imports: [],
+  imports: [NgFor],
   templateUrl: './employee-card.component.html',
   styleUrl: './employee-card.component.scss'
 })
 export class EmployeeCardComponent {
-  @Input() employee: Employee = { name: '', role: '',avatar: '', experience: 0,doj:'', employee_rating: 0, current_team: '', reporting_manager: '', mobile_number: '', email: '' };
+  @Input() employee: Employee = { name: '', designation: '',avatar: '', experience: 0,yoj:'', employee_rating: 0, team: '', reporting_manager: '', mobile_number: '', email: '' ,location: '',employment_type: ''};
+  
+  getStar(n: number): number[] {
+    return Array(n).fill(0).map((_, i) => i);
+  }
 }

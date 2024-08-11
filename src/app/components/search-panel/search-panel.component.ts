@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SelectComponent } from '../../shared/components/select/select.component';
+import { CommonService } from '../../shared/services/common.service';
 
 @Component({
   selector: 'app-search-panel',
@@ -9,18 +10,19 @@ import { SelectComponent } from '../../shared/components/select/select.component
   styleUrl: './search-panel.component.scss',
 })
 export class SearchPanelComponent {
-
   @Input() searchPanelVisible = false;
-  @Output() searchPanelVisibleChange = new EventEmitter()
+  @Output() searchPanelVisibleChange = new EventEmitter();
+
+  constructor(private cs: CommonService) {}
   searchObj = {
-    dept: 'Front End Development',
-    roll: 'Full Time',
+    department: 'Front End Development',
+    employment_type: 'Full Time',
     designation: '',
     experience: '',
     yoj: '',
     location: '',
-    team: ''
-  }
+    team: '',
+  };
 
   dept_list = [
     {
@@ -32,8 +34,8 @@ export class SearchPanelComponent {
       value: 'ML Engineering',
     },
     {
-      label: 'Quality Ananlyst',
-      value: 'Quality Ananlyst',
+      label: 'Quality Analyst',
+      value: 'Quality Analyst',
     },
     {
       label: 'Human Resource Management',
@@ -47,6 +49,10 @@ export class SearchPanelComponent {
       label: 'Back End Development',
       value: 'Back End Development',
     },
+    {
+      label: 'Product',
+      value: 'Product',
+    },
   ];
 
   role_list = [
@@ -59,10 +65,6 @@ export class SearchPanelComponent {
       value: 'Consultant',
     },
     {
-      label: 'Part Time',
-      value: 'Part Time',
-    },
-    {
       label: 'Intern',
       value: 'Intern',
     },
@@ -73,8 +75,8 @@ export class SearchPanelComponent {
       value: 'Sr. UI Developer',
     },
     {
-      label: 'Full Stack Developer',
-      value: 'Full Stack Developer',
+      label: 'UI Developer',
+      value: 'UI Developer',
     },
     {
       label: 'UI/UX Designer',
@@ -154,20 +156,34 @@ export class SearchPanelComponent {
     },
   ];
 
-  clear(){
+  team_list = [
+    { value: 'Product Team', label: 'Product Team' },
+    { value: 'IDC', label: 'IDC' },
+    { value: 'OCBC', label: 'OCBC' },
+    { value: 'Radian', label: 'Radian' },
+    { value: 'Rustify', label: 'Rustify' },
+  ];
+
+  clear() {
     this.searchObj = {
-      dept: '',
-      roll: '',
+      department: '',
+      employment_type: '',
       designation: '',
       experience: '',
       yoj: '',
       location: '',
-      team: ''
-    }
+      team: '',
+    };
+    this.cs.filterData(this.searchObj);
   }
 
-  closeSearchPanel(){
+  closeSearchPanel() {
     this.searchPanelVisible = false;
-    this.searchPanelVisibleChange.emit()
+    this.searchPanelVisibleChange.emit();
+  }
+
+  filterEmployee() {
+    this.cs.filterData(this.searchObj);
+    this.searchPanelVisibleChange.emit(this.searchObj);
   }
 }
