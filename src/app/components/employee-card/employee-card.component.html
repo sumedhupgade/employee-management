@@ -17,8 +17,8 @@
       <div class="subtitle" [textContent]="employee.designation"></div>
     </div>
     <div class="share-profile">
-      <button class="circle-btn send-btn">
-        <img src="img/send.svg" height="15" width="15" alt="share">
+      <button class="circle-btn send-btn" (click)="togglePopover(true)">
+        <img src="img/send.svg" height="15" width="15" alt="share" />
       </button>
     </div>
   </div>
@@ -27,44 +27,49 @@
       <span [textContent]="employee.employee_rating"></span> Rating
     </div>
     <div class="rating">
-        <img *ngFor="let rating of getStar(employee.employee_rating)" src="img/star-filled.png" alt="">
+      <img
+        *ngFor="let rating of getStar(employee.employee_rating)"
+        src="img/star-filled.png"
+        alt=""
+      />
     </div>
   </div>
   <div class="employee-card-row">
     <div class="d-flex align-items-center w45p gap-1">
-        <div class="grey-text">Experience:</div>
-        <div [textContent]="employee.experience"></div>
+      <div class="grey-text">Experience:</div>
+      <div [textContent]="employee.experience"></div>
     </div>
     <div class="tilted-seprator"></div>
     <div class="d-flex align-items-center w55p gap-1 pl-12">
-        <div class="grey-text">Date of Joining:</div>
-        <div [textContent]="employee.yoj"></div>
+      <div class="grey-text">Date of Joining:</div>
+      <div [textContent]="employee.yoj"></div>
     </div>
   </div>
   <div class="employee-card-row">
     <div class="d-flex align-items-center gap-1">
-        <div class="grey-text">Current Team:</div>
-        <div [textContent]="employee.team"></div>
+      <div class="grey-text">Current Team:</div>
+      <div [textContent]="employee.team"></div>
     </div>
   </div>
   <div class="employee-card-row">
     <div class="d-flex align-items-center gap-1">
-        <div class="grey-text">Reporting Manager:</div>
-        <div [textContent]="employee.reporting_manager"></div>
+      <div class="grey-text">Reporting Manager:</div>
+      <div [textContent]="employee.reporting_manager"></div>
     </div>
   </div>
   <div class="employee-card-row">
     <div class="d-flex align-items-center w50p gap-1">
-        <button class="circle-btn">
-            <img src="img/phone.png" alt="">
-        </button>
-        <div [textContent]="employee.mobile_number"></div>
+      <button class="circle-btn">
+        <img src="img/phone.png" alt="" />
+      </button>
+      <div [textContent]="employee.mobile_number"></div>
     </div>
     <div class="d-flex align-items-center w50p gap-1 pl-12">
-        <button class="circle-btn">
-            <img src="img/email.png" alt="">
-        </button>
-        <div class="email" [textContent]="employee.email"></div>
+      <button class="circle-btn">
+        <img src="img/email.png" alt="" />
+      </button>
+      <div class="email" [textContent]="employee.email"></div>
     </div>
   </div>
+  <app-popover [(visiblity)]="employee.popoverVisibility" ></app-popover>
 </div>

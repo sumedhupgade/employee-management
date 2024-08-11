@@ -1,7 +1,7 @@
 :host {
   width: calc(calc(100% - 34px) / 4);
   min-width: 265px;
-//   max-width: 320px;
+  //   max-width: 320px;
   .employee-card {
     background-color: #ffffff;
     border-radius: 3px;
@@ -9,6 +9,7 @@
     box-sizing: border-box;
     height: 100%;
     width: 100%;
+    position: relative;
 
     .employee-card-header {
       display: flex;
@@ -53,9 +54,9 @@
         display: flex;
         justify-content: flex-end;
 
-        .circle-btn.send-btn img{
-            height: 15px;
-            width: 15px;
+        .circle-btn.send-btn img {
+          height: 15px;
+          width: 15px;
         }
       }
     }
@@ -135,18 +136,18 @@
 }
 
 @media screen and (min-width: 1600px) {
-    :host {
-        width: 270px !important;
-        min-width: 270px;
-        max-width: unset;
-    }
+  :host {
+    width: 270px !important;
+    min-width: 270px;
+    max-width: unset;
+  }
 }
 
 @media screen and (min-width: 2560px) {
-    :host {
-        width: 270px !important;
-        flex: unset !important;
-        min-width: 270px;
-        max-width: unset;
-    }
+  :host {
+    width: 270px !important;
+    flex: unset !important;
+    min-width: 270px;
+    max-width: unset;
+  }
 }

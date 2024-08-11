@@ -33,9 +33,7 @@ export class SelectComponent {
       this.dropdwDownOpen = false;
     }
   }
-  constructor(private elementRef: ElementRef) {
-    this.valueChange = new EventEmitter();
-  }
+  constructor(private elementRef: ElementRef) {}
 
   select(value: string) {
     this.dropdwDownOpen = false;

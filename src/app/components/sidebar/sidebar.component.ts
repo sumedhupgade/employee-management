@@ -13,6 +13,7 @@ export class SidebarComponent{
   @Input() searchPanelVisible = false;
   @Output() takeAction = new EventEmitter();
   searchActive = false;
+  
   constructor(private router: Router) {
     router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
