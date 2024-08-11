@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SelectComponent } from '../../shared/components/select/select.component';
-import { CommonService } from '../../shared/services/common.service';
+import { SelectComponent } from '../../../shared/components/select/select.component';
+import { CommonService } from '../../../shared/services/common.service';
 
 @Component({
   selector: 'app-header',
@@ -20,10 +20,8 @@ export class HeaderComponent {
   ];
 
   constructor(private cs: CommonService){}
-  filterEmployee(ev:string) {
-    console.log(ev);
-    
-    const criteria = { team: ev };
+  filterEmployee(value:string) {
+    const criteria = { team: value };
     this.cs.filterData(criteria)
   }
 }

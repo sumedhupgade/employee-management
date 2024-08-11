@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { Employee } from '../../components/employee-card/employee-card.component';
+import { Employee } from '../../components/home/tabs/overview/employee-card/employee-card.component';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

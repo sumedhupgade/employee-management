@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { EmployeeCardComponent } from '../employee-card/employee-card.component';
+import { EmployeeCardComponent } from './employee-card/employee-card.component';
 import { FormsModule } from '@angular/forms';
-import { CommonService } from '../../shared/services/common.service';
-import { Employee } from '../employee-card/employee-card.component';
+import { CommonService } from '../../../../shared/services/common.service';
+import { Employee } from './employee-card/employee-card.component';
 @Component({
   selector: 'app-overview',
   standalone: true,
@@ -12,12 +12,12 @@ import { Employee } from '../employee-card/employee-card.component';
 })
 export class OverviewComponent {
   showBangloreOnly = false;
-  employees:Employee[] = [];
+  employees: Employee[] = [];
 
-  constructor(private cs: CommonService){
-    this.cs.employeesChanged.subscribe((value)=>{
+  constructor(private cs: CommonService) {
+    this.cs.employeesChanged.subscribe((value) => {
       this.employees = value;
-    })
+    });
   }
   ngOnInit(): void {
     this.fetchData();
@@ -33,12 +33,11 @@ export class OverviewComponent {
       },
       complete: () => {
         console.log('API call completed.');
-      }
+      },
     });
   }
 
-  orgEmployees = [...this.employees];
   filterEmployee() {
-    this.cs.filterData({location: this.showBangloreOnly ? 'Bangalore' : ''})
+    this.cs.filterData({ location: this.showBangloreOnly ? 'Bangalore' : '' });
   }
 }

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgFor } from '@angular/common';
-import { PopoverComponent } from '../../shared/components/popover/popover.component';
+import { PopoverComponent } from '../../../../../shared/components/popover/popover.component';
 
 export interface Employee {
   name: string,

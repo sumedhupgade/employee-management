@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { SelectComponent } from '../../shared/components/select/select.component';
-import { CommonService } from '../../shared/services/common.service';
+import { SelectComponent } from '../../../shared/components/select/select.component';
+import { CommonService } from '../../../shared/services/common.service';
 
 @Component({
   selector: 'app-search-panel',

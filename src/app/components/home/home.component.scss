@@ -22,14 +22,14 @@
       & + .routing-content {
         width: calc(100% - 275px);
 
-        app-employee-card{
-            flex: 0 1 calc(33.34% - 7px);
-            min-width: unset;
-            max-width: unset;
+        app-employee-card {
+          flex: 0 1 calc(33.34% - 7px);
+          min-width: unset;
+          max-width: unset;
         }
       }
     }
-    
+
     .routing-content {
       display: flex;
       flex-direction: column;
