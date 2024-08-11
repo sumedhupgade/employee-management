@@ -29,4 +29,9 @@ export class PopoverComponent {
       this.visiblityChange.emit();
     }
   }
+
+  share(shareTo: string){
+    this.visiblity = false;
+    this.visiblityChange.emit();
+  }
 }
