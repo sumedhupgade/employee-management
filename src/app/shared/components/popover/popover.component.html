@@ -1,16 +1,16 @@
 @if (visiblity) {
 <div class="popover">
   <div class="popover-content">
-    <div class="icon">
+    <div class="icon" (click)="share('gmail')">
       <img src="img/gmail.png" alt="Gmail" />
     </div>
-    <div class="icon">
+    <div class="icon" (click)="share('Slack')">
       <img src="img/slack.png" alt="Slack" />
     </div>
-    <div class="icon">
+    <div class="icon" (click)="share('Hangouts')">
       <img src="img/hangout.png" alt="Hangouts" />
     </div>
-    <div class="icon">
+    <div class="icon" (click)="share('GitHub')">
       <img src="img/github.png" alt="GitHub" />
     </div>
   </div>
