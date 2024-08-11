@@ -59,3 +59,6 @@ Passes the selected value back to the parent component.
 # Popover:
 
 Designed with similar considerations as custom select, allowing for interaction and closing on outside click.
+
+# P.S
+Due to lack of clarity i have chosen to make employee cards a bit responsive as opposed to showing fixed 4 cards as in shared design.    
