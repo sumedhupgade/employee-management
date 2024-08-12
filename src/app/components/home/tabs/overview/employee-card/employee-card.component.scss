@@ -135,9 +135,23 @@
   }
 }
 
+@media screen and (min-width: 320px) and (max-width: 720px) {
+  :host {
+    width: 100%;
+    min-width: 100%;
+    max-width: unset;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 1024px) {
+  :host {
+    width: calc(calc(100% - 10px) / 2);
+    min-width: 270px;
+    max-width: unset;
+  }
+}
 @media screen and (min-width: 1600px) {
   :host {
-    width: 270px !important;
+    width: calc(calc(100% - 40px) / 5);
     min-width: 270px;
     max-width: unset;
   }
@@ -145,7 +159,7 @@
 
 @media screen and (min-width: 2560px) {
   :host {
-    width: 270px !important;
+    width: calc(calc(100% - 60px) / 7) !important;
     flex: unset !important;
     min-width: 270px;
     max-width: unset;
